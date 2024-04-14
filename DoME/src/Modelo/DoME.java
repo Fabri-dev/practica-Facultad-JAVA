@@ -30,17 +30,32 @@ public class DoME {
     {
         String texto=null;
         for(int i = 0;i<elementos.size();i++) {
-            if (elementos.get(i) instanceof CD)
-            {
-                texto+= elementos.get(i).imprimir();
-
-            }else if(elementos.get(i) instanceof DVD)
-            {
-               texto+= elementos.get(i).imprimir();
-            }
-
+            texto+= elementos.get(i).imprimir();
         }
         return  texto;
+    }
+
+    public Elemento retornarUnElementoXTitulo(String tituloBuscado)
+    {
+        Elemento auxElemento = null;
+        for (int i = 0; i < elementos.size(); i++) {
+            if (elementos.get(i).getTitulo().equals(tituloBuscado)) {
+                auxElemento = elementos.get(i);
+            }
+        }
+        return auxElemento;
+    }
+
+    public Elemento quitarUnElementoXTitulo(String tituloBuscado)
+    {
+        Elemento auxElemento = null;
+        for (int i = 0; i < elementos.size(); i++) {
+            if (elementos.get(i).getTitulo().equals(tituloBuscado)) {
+                auxElemento = elementos.get(i);
+                elementos.remove(i);
+            }
+        }
+        return auxElemento;
     }
 
 }
