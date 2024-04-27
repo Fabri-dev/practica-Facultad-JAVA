@@ -15,9 +15,23 @@ public  class GestoraDeEmpleados {
     //getters y setters
 
 
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
+
     //metodos
-        public void agregar(Empleado empleado)
+    public void agregar(Empleado empleado)
         {
             empleados.add(empleado);
         }
+
+    public String obtenerInfoTotal()
+    {
+        String s="";
+        for(Empleado empleado: empleados)
+        {
+            s+=empleados.toString()+"\n";
+        }
+        return s;
+    }
 }
