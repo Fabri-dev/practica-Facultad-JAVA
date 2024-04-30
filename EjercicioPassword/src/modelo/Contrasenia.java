@@ -15,7 +15,8 @@ public class Contrasenia {
 
     public Contrasenia(int longitud) {
         this.longitud = longitud;
-
+        contrasenia="";
+        generarContraAleatoria();
         //contrasenia random
     }
 
@@ -65,6 +66,20 @@ public class Contrasenia {
 
         return flag;
     }
+
+    public void generarContraAleatoria()
+    {
+        String caracteres="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int indiceAleatorio=0;
+        for (int i=0; i < longitud; i++)
+        {
+            indiceAleatorio= (int) (Math.random()*caracteres.length()); // me da un numero entre 0 y la long del arreglo de caracteres
+            contrasenia+= caracteres.charAt(indiceAleatorio);
+        }
+
+    }
+
+
 
     @Override
     public String toString() {
