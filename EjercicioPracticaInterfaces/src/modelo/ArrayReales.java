@@ -3,6 +3,7 @@ package modelo;
 import interfaces.IEstadisticas;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ArrayReales implements IEstadisticas {
     //atributos
@@ -31,7 +32,6 @@ public class ArrayReales implements IEstadisticas {
 
     @Override
     public double minimo() {
-
         double min= reales.getFirst();
 
         for(Double actual:reales)
@@ -72,6 +72,5 @@ public class ArrayReales implements IEstadisticas {
     {
         reales.add(aux);
     }
-
 
 }
