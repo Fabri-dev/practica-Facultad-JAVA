@@ -3,7 +3,6 @@ package modelo;
 import interfaces.IMetodosEspeciales;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class CArrayList implements IMetodosEspeciales {
     //atributos
@@ -48,32 +47,47 @@ public class CArrayList implements IMetodosEspeciales {
     }
 
     @Override
-    public void agregar(Object o) {
+    public boolean agregar(Object o) {
+        boolean flag=false;
         if (o != null && o instanceof Integer)
         {
-            
+            Integer aux=(Integer) o;
+            flag=arreglito.add(aux);
         }
-
+        return flag;
     }
 
     @Override
     public boolean eliminar(Object o) {
-        return false;
+        boolean flag=false;
+        if (o != null && o instanceof Integer aux)
+        {
+            flag= arreglito.remove(aux); // si no se encuentra retorna false, si se elimina retorna true
+        }
+        return flag;
     }
 
     @Override
     public boolean buscar(Object o) {
-        return false;
+        boolean flag=false;
+        if (o != null)
+        {
+            if (o instanceof Integer aux)
+            {
+                flag= arreglito.contains(aux);
+            }
+        }
+        return flag;
     }
 
     @Override
     public String listar() {
-        return "";
+        return this.toString();
     }
 
     @Override
     public int contar() {
-        return 0;
+        return arreglito.size();
     }
 
     @Override
