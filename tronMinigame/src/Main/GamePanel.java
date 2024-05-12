@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements ActionListener {
     static final int DELAY=50;
 
     boolean running=false;
-    public Timer timer;
+    private Timer timer;
 
     private final Bike bike1;
     private final Bike bike2;
